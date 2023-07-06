@@ -76,6 +76,7 @@ h1{
     margin-left: 11vh;
     width: 341.8px;
     font-family: 'Courier New', Courier, monospace; 
+    cursor: pointer;
 }
 .password{
     display: flexbox;
@@ -89,5 +90,21 @@ h1{
 .newPassword{
     margin-left:70vh;
     width: 350px;
-    font-family: 'Courier New', Courier, monospace; 
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer; 
+}
+.generate{
+    display: flex;
+    margin-top: 5vh;
+    margin-left: 90vh;
+    width: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: rgb(3, 26, 41);
+    color: rgb(255, 254, 254);
+}
+.generate:hover{
+    background-color: rgb(70, 169, 205);
+    color:rgb(255, 254, 254);
+    cursor: pointer;
 }

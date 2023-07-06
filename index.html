@@ -16,7 +16,7 @@
     <form>
         <div class="parametros">
             <h3 class="parametro1">Primeiro Caracter</h3>
-            <div class="group-btn" data-toggle="buttoms">
+            <div class="group-btn" id="primeiro" data-toggle="buttoms">
                 <label class="f-btn">
                     <input type="radio"/>
                     Numeral
@@ -37,7 +37,7 @@
         </div> 
       
         <div class="parametros2">
-            <h3 class="outros-caracters">Outros Caracteres</h3>
+            <h3 class="outros-caracters" id="outros">Outros Caracteres</h3>
             <div class="group-btn2" data-toggle="buttoms">
                 <label class="f-btn">
                     <input type="radio"/>
@@ -58,7 +58,7 @@
             </div>
         </div>
         
-        <div class="caracter">
+        <div class="caracter" id="tamanho">
             <h3 class="tamanho">Tamanho</h3>
             <input class="total-caracter"type="number"/>
         </div>
@@ -66,6 +66,7 @@
         <div class="password">
             <h3 class="newpass">Nova Senha</h3>
             <input class="newPassword"/>
+            <button class="generate" id="gerarSenha">Gerar</button>
         </div>
     
     </form>
