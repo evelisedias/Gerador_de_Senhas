@@ -17,7 +17,7 @@ nav{
 header{
     display: inline-flex;
     height: 100px;
-    width: 210.5vh;
+    width: 198.7vh;
     background-color: rgb(3, 26, 41);
 }
 h1{
@@ -30,27 +30,64 @@ h1{
     display: flexbox;
     flex-direction: row;
     margin-left: 25vh;
-    margin-top: 20vh;
+    margin-top: 10vh;
 }
 .parametro1 {
-    margin-left: 70px;
-    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 15vh;
+    font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
 }
 .group-btn{
-    font-size: 22px;
+    margin-left: 35px;
+    font-size: 18px;
     padding: 10px 10px;
+}
+.parametros2{
+    display: flexbox;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-left: 120vh;
+}
+.outros-caracters{
+    margin-left: 9vh;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace; 
+}
+.group-btn2{
+    font-size: 18px;
 }
 .caracter{
     display: flexbox;
-    margin-top: 10vh;
+    flex-direction: row;
+    margin-top: 2vh;
     font-size: 20px;
+    margin-left: 20vh;
 }
-.qtd-caracter{
-    margin-left: 20px;
+.tamanho{
+    margin-left: 30vh;
+    font-size: 20px;
     font-family: 'Courier New', Courier, monospace; 
 }
+
 .total-caracter{
-    margin-left: 7vh;
-    width: 400px;
+    margin-left: 11vh;
+    width: 341.8px;
+    font-family: 'Courier New', Courier, monospace; 
+}
+.password{
+    display: flexbox;
+    margin-top: 10vh;
+}
+.newpass{
+    margin-left: 87vh;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;  
+}
+.newPassword{
+    margin-left:70vh;
+    width: 350px;
+    font-family: 'Courier New', Courier, monospace; 
 }
