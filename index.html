@@ -18,23 +18,23 @@
             <h3 class="parametro1">Primeiro Caracter</h3>
             <div class="group-btn" id="primeiro" data-toggle="buttoms">
                 <label class="f-btn">
-                    <input type="radio"/>
+                    <input type="radio" value="Numeral" name="option"/>
                     Numeral
                 </label>
                 <label class="s-btn">
-                    <input type="radio"/>
+                    <input type="radio" value="Maíusculo" name="option"/>
                     Maíusculo
                 </label>
                 <label class="t-btn">
-                    <input type="radio"/>
+                    <input type="radio" value="Minúsculo" name="option"/>
                     Minúsculo
                 </label>
                 <label class="q-btn">
-                    <input type="radio"/>
+                    <input type="radio" value="Outros" name="option"/>
                     Outros
                 </label>
             </div>
-        </div> 
+        </div>    
       
         <div class="parametros2">
             <h3 class="outros-caracters" id="outros">Outros Caracteres</h3>
@@ -58,17 +58,18 @@
             </div>
         </div>
         
-        <div class="caracter" id="tamanho">
+        <div class="caracter" >
             <h3 class="tamanho">Tamanho</h3>
-            <input class="total-caracter"type="number"/>
+            <input class="total-caracter"type="number" id="tamanho"/>
         </div>
 
         <div class="password">
             <h3 class="newpass">Nova Senha</h3>
-            <input class="newPassword"/>
+            <input class="newPassword" id="newPassword"/>
             <button class="generate" id="gerarSenha">Gerar</button>
         </div>
     
     </form>
+    <script src="/_js/main.js"></script>
 </body>
 </html>
