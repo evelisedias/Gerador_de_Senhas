@@ -1,0 +1,53 @@
+@media screen and (max-width: 600px) {
+body{
+    background-color: #ffff;
+}
+.img_logo{
+    width:100px;
+    }
+header{
+    height: 50px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 16px;
+}
+.parametros, .parametros2, .caracter{
+    display: flexbox;
+    margin-left: 2vh;
+    
+}
+.parametro1, .outros-caracters{
+    font-size: 14px;
+}
+.group-btn, .group-btn2{
+    font-size: 12px;
+}
+.outros-caracters{
+    margin-left: 15vh;
+    margin-top: 5vh;
+}
+.group-btn2{
+    margin-left: 7vh;
+}
+.tamanho{
+    font-size: 14px;
+    margin-left: 22vh;
+    margin-top: 5vh;
+}
+.total-caracter{
+    width: 70%;
+    margin-left: 7vh;
+}
+.newpass, .generate, .newPassword{
+    font-size: 14px;
+    margin-left: 22vh;
+}
+.newPassword{
+    width: 70%;
+    margin-left: 8vh;
+}
+
+
+}
