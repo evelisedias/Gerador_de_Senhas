@@ -16,8 +16,8 @@ nav{
 }
 header{
     display: inline-flex;
-    height: 100px;
-    width: 198.7vh;
+    height: 100%;
+    width: 100%;
     background-color: rgb(3, 26, 41);
 }
 h1{

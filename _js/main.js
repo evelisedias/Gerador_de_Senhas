@@ -1,64 +1,58 @@
-// Obtém os elementos HTML
-const primeiroOpcao = document.querySelectorAll('#primeiro input[type="radio"]');
-const outrosOpcao = document.querySelectorAll('#outros input[type="radio"]');
-const tamanhoInput = document.getElementById('tamanho');
-const newPasswordInput = document.getElementById('newPassword');
-const gerarSenhaBtn = document.getElementById('gerarSenha');
+// Espera o carregamento completo do DOM
+document.addEventListener("DOMContentLoaded", function() {
+  var gerarSenhaBtn = document.getElementById('gerarSenha');
 
-// Mapeia os valores correspondentes às opções selecionadas
-const primeiroMap = {
-  Numeral: '0123456789',
-  Maiusculo: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  Minusculo: 'abcdefghijklmnopqrstuvwxyz',
-  Outros: '!@#$%^&*()'
-};
+  function gerarSenha(event) {
+    event.preventDefault(); // Previne o comportamento padrão de envio do formulário
 
-const outrosMap = {
-  Numeral1: '0123456789',
-  Maiusculo1: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  Minusculo1: 'abcdefghijklmnopqrstuvwxyz',
-  Outros1: '!@#$%^&*()'
-};
+    var primeiraOpcao = document.querySelector('input[name="option"]:checked');
+    var outraOpcao = document.querySelector('input[name="options"]:checked');
+    var tamanhoInput = document.getElementById('tamanho');
+    var newPasswordInput = document.getElementById('newPassword');
 
-// Função para gerar um caractere aleatório
-function caractereAleatorio(caracteres) {
-    const randomIndex = Math.floor(Math.random() * caracteres.length);
-    return caracteres[randomIndex];
+    // Mapeia os valores correspondentes às opções selecionadas
+    var Numeral = '0123456789';
+    var Maiusculo = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var Minusculo = 'abcdefghijklmnopqrstuvwxyz';
+    var Outros = '!@#$%^&*()';
+
+    var tamanho = tamanhoInput.value;
+    var senha = '';
+    var outrasOpcoes = '';
+
+    //criando senha aleatoria de acordo com a opcao marcada
+    if (outraOpcao) {
+      for (var i = 0; i < tamanho; i++) {
+        if (outraOpcao.value === "Numeral1") {
+          senha += Numeral.charAt(Math.floor(Math.random() * Numeral.length));
+        } else if (outraOpcao.value === "Maiusculo1") {
+          senha += Maiusculo.charAt(Math.floor(Math.random() * Maiusculo.length));
+        } else if (outraOpcao.value === "Minusculo1") {
+          senha += Minusculo.charAt(Math.floor(Math.random() * Minusculo.length));
+        } else if (outraOpcao.value === "Outros1") {
+          senha += Outros.charAt(Math.floor(Math.random() * Outros.length));
+        }
+      }
+    }
+
+//alterando a primeira posicao
+    if (primeiraOpcao) {
+      senha = senha.slice(0); 
+      if (primeiraOpcao.value === 'Numeral') {
+        senha = Numeral.charAt(Math.floor(Math.random() * Numeral.length)) + senha;
+      } else if (primeiraOpcao.value === "Maiusculo") {
+        senha = Maiusculo.charAt(Math.floor(Math.random() * Maiusculo.length)) + senha;
+      } else if (primeiraOpcao.value === "Minusculo") {
+        senha = Minusculo.charAt(Math.floor(Math.random() * Minusculo.length)) + senha;
+      } else if (primeiraOpcao.value === "Outros") {
+        senha = Outros.charAt(Math.floor(Math.random() * Outros.length)) + senha;
+      }
+    }
+
+    newPasswordInput.value = senha; // Atribui o valor de senha à newPasswordInput
+    console.log(newPasswordInput.value);
   }
 
-// Gera uma senha aleatória
-function gerarSenha(event) {
-  event.preventDefault(); // Evita o comportamento padrão do formulário de atualizar a página
-  
-  let senha = '';
-  
-  // Verifica a opção selecionada na primeira escolha
-  const primeiroSelecionado = Array.from(primeiroOpcao).find(opcao => opcao.checked);
-  const primeiroValor = primeiroMap[primeiroSelecionado.value];
-  
-  // Verifica a opção selecionada nas outras escolhas
-  const outrosSelecionados = Array.from(outrosOpcao)
-    .filter(opcao => opcao.checked)
-    .map(opcao => outrosMap[opcao.value])
-    .join('');
-  
-  const todosCaracteres =  outrosSelecionados;
-  
-  // Obtém o tamanho da senha
-  const tamanho = parseInt(tamanhoInput.value);
-  
-    // Insere o primeiro caractere como o primeiro da senha
-  senha += primeiroValor;
-  
-  // Gera os caracteres aleatórios para as posições de 1 a 7
-  for (let i = 1; i < tamanho; i++) {
-    senha += caractereAleatorio(todosCaracteres);
-  }
-  
-
-  // Exibe a senha gerada
-  newPasswordInput.value = senha;
-}
-
-// Associa a função de geração de senha ao evento de clique no botão "Gerar"
-gerarSenhaBtn.addEventListener('click', gerarSenha);
+  // Adiciona o event listener ao botão gerarSenhaBtn
+  gerarSenhaBtn.addEventListener('click', gerarSenha);
+});
