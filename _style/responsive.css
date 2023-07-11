@@ -1,3 +1,4 @@
+/*midea ate 600px*/
 @media screen and (max-width: 600px) {
 body{
     background-color: #ffff;
@@ -51,3 +52,114 @@ h1 {
 
 
 }
+/*midea de 425px*/
+@media screen and (width: 425px) {
+    body{
+        background-color: #ffff;
+    }
+    .img_logo{
+        width:100px;
+        }
+    header{
+        height: 50px;
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 16px;
+    }
+    .parametros, .parametros2, .caracter{
+        display: flexbox;
+        margin-left: 10px;
+        
+    }
+    .parametro1, .outros-caracters{
+        font-size: 14px;
+        margin-left: 20vh;
+    }
+    .group-btn, .group-btn2{
+        font-size: 12px;
+    }
+    .outros-caracters{
+        
+        margin-top: 5vh;
+    }
+    .group-btn2{
+        margin-left: 8vh;
+    }
+    .tamanho{
+        font-size: 14px;
+        margin-left: 29.5vh;
+        margin-top: 5vh;
+    }
+    .total-caracter{
+        width: 70%;
+        margin-left: 7vh;
+    }
+    .newpass, .generate, .newPassword{
+        font-size: 14px;
+        margin-left: 29.5vh;
+    }
+    .newPassword{
+        width: 70%;
+        margin-left: 8vh;
+    }
+}    
+
+/*midea 768px*/
+@media screen and (width: 768px) {
+    body{
+        background-color: #ffff;
+    }
+    .img_logo{
+        width:100px;
+        }
+    header{
+        height: 50px;
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 16px;
+    }
+    .parametros, .parametros2, .caracter{
+        display: flexbox;
+        margin-left: 10vh;
+        
+    }
+    .parametro1, .outros-caracters{
+        font-size: 20px;
+        margin-left: 20vh;
+    }
+    .group-btn, .group-btn2{
+        font-size: 18px;
+        margin-left: 12vh;
+    }
+    .outros-caracters{
+        
+        margin-top: 5vh;
+    }
+    
+    .tamanho{
+        font-size: 14px;
+        margin-left: 25vh;
+        margin-top: 5vh;
+    }
+    .total-caracter{
+        width: 45%;
+        margin-left: 15vh;
+    }
+    .newpass{
+        font-size: 18px;
+        margin-left: 35vh;
+    }
+    .newPassword{
+        width: 40%;
+        margin-left: 25vh;
+        margin-top: 5px;
+    }
+    .generate{
+        margin-left: 38vh;
+    }
+}    
+

@@ -20,34 +20,43 @@ document.addEventListener("DOMContentLoaded", function() {
     var senha = '';
     var outrasOpcoes = '';
 
-    //criando senha aleatoria de acordo com a opcao marcada
-    if (outraOpcao) {
-      for (var i = 0; i < tamanho; i++) {
-        if (outraOpcao.value === "Numeral1") {
-          senha += Numeral.charAt(Math.floor(Math.random() * Numeral.length));
-        } else if (outraOpcao.value === "Maiusculo1") {
-          senha += Maiusculo.charAt(Math.floor(Math.random() * Maiusculo.length));
-        } else if (outraOpcao.value === "Minusculo1") {
-          senha += Minusculo.charAt(Math.floor(Math.random() * Minusculo.length));
-        } else if (outraOpcao.value === "Outros1") {
-          senha += Outros.charAt(Math.floor(Math.random() * Outros.length));
-        }
-      }
-    }
+// criando senha aleatória de acordo com as opções marcadas
+if (outraOpcao) {
+  var opcoesSelecionadas = document.querySelectorAll('input[name="options"]:checked');
 
-//alterando a primeira posicao
-    if (primeiraOpcao) {
-      senha = senha.slice(0); 
-      if (primeiraOpcao.value === 'Numeral') {
-        senha = Numeral.charAt(Math.floor(Math.random() * Numeral.length)) + senha;
-      } else if (primeiraOpcao.value === "Maiusculo") {
-        senha = Maiusculo.charAt(Math.floor(Math.random() * Maiusculo.length)) + senha;
-      } else if (primeiraOpcao.value === "Minusculo") {
-        senha = Minusculo.charAt(Math.floor(Math.random() * Minusculo.length)) + senha;
-      } else if (primeiraOpcao.value === "Outros") {
-        senha = Outros.charAt(Math.floor(Math.random() * Outros.length)) + senha;
-      }
+  // Adiciona a primeira opção à senha
+  if (primeiraOpcao) {
+    if (primeiraOpcao.value === 'Numeral') {
+      senha += Numeral.charAt(Math.floor(Math.random() * Numeral.length));
+    } else if (primeiraOpcao.value === "Maiusculo") {
+      senha += Maiusculo.charAt(Math.floor(Math.random() * Maiusculo.length));
+    } else if (primeiraOpcao.value === "Minusculo") {
+      senha += Minusculo.charAt(Math.floor(Math.random() * Minusculo.length));
+    } else if (primeiraOpcao.value === "Outros") {
+      senha += Outros.charAt(Math.floor(Math.random() * Outros.length));
     }
+  }
+
+  while (senha.length < tamanho) {
+    var opcao = opcoesSelecionadas[Math.floor(Math.random() * opcoesSelecionadas.length)].value;
+
+    if (opcao.includes("Numeral1")) {
+      senha += Numeral.charAt(Math.floor(Math.random() * Numeral.length));
+    }
+    if (opcao.includes("Maiusculo1")) {
+      senha += Maiusculo.charAt(Math.floor(Math.random() * Maiusculo.length));
+    }
+    if (opcao.includes("Minusculo1")) {
+      senha += Minusculo.charAt(Math.floor(Math.random() * Minusculo.length));
+    }
+    if (opcao.includes("Outros1")) {
+      senha += Outros.charAt(Math.floor(Math.random() * Outros.length));
+    }
+  }
+
+  senha = senha.slice(0, tamanho); // Limita a senha ao tamanho especificado
+}
+
 
     newPasswordInput.value = senha; // Atribui o valor de senha à newPasswordInput
     console.log(newPasswordInput.value);
